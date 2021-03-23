@@ -1,0 +1,131 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --white: #fff;
+    --green: #12CE5B;
+    --green-hover: #31A05C;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--green);
+    color: var(--white);
+}
+
+.brand-title {
+    margin: .5rem;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+    margin: 0;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: var(--white);
+    padding: 1.5rem;
+    display: block;
+    font-family: Montserrat, sans-serif;
+    font-weight: regular;
+}
+
+.navbar-links li:hover {
+    background-color: var(--green-hover);
+
+}
+
+#logo {
+    width: 13rem;
+    height: 2.8rem;
+}
+
+/* RESPONSIVE NAVBAR */
+
+.toggle-button {
+    position: absolute;
+    top: 1.3rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--white);
+    border-radius: 10px;
+}
+
+/* MEDIA QUERIES -- SHRINK PAGE */
+
+@media (max-width: 400px) {
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    /* To display the links one under another */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: 1rem .1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    .change .bar1 {
+        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+        transform: rotate(-45deg) translate(-8px, 6px);
+    }
+
+    .change .bar2 {
+        opacity: 0;
+    }
+
+    .change .bar3 {
+        -webkit-transform: rotate(45deg) translate(-9px, -9px);
+        transform: rotate(45deg) translate(-5.7px, -5.7px);
+    }
+
+}
